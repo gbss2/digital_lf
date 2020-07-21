@@ -14,7 +14,7 @@ def script_usage():
     print('usage example: uniprot_api.py --query <query; eg. "Repair"> ')
     print('\n Retrieve data:')
     print('-r | --retrieve data for a given ID -q | --query <entries> and -f | --format <eg. "tab", "xml", "html", "xls", "fasta"> ')
-    print('usage example: uniprot_api.py --retrieve --query 'P86784' --format 'tab'')
+    print('usage example: uniprot_api.py --retrieve --query "P86784" --format "tab"')
     print('Query syntax:')
     print('Entries containing two or more terms: human antigen | human AND antigen | human && antigen')
     print('Entries containing both terms in the exact order: "human antigen"')
@@ -26,7 +26,7 @@ def script_usage():
     print('Entries with a sequence of at least 100 amino acids: length:[100 TO *] ')
     print('\n Convert Identifiers:')
     print('-c | --convert <database_abbreviation> from/to -t | --targetdb <database_abbreviation> the following ID(s) -q | --query <ID or filename with IDs> and -f | --format <eg. "tab", "xml", "html", "xls", "fasta">')
-    print('usage example: uniprot_api.py --convert 'ACC' --targetdb 'P_ENTREZGENEID' --query 'P86784' --format 'tab'')
+    print('usage example: uniprot_api.py --convert "ACC" --targetdb "P_ENTREZGENEID" --query "P86784" --format "tab"')
 
 # Uniprot Base URLs
 # Convert API
