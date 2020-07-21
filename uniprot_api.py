@@ -41,7 +41,7 @@ urlSearch = "https://www.uniprot.org/uniprot/?"
 # To: Database ID abbreviation
 # Format: html | tab | xls | fasta | gff | txt | xml | rdf | list | rss
 # Query: Database identifier(s)
-def convParameters(from, to, format, query):
+def convParameters(from,to,format,query):
     parameters = {
     'from': from,
     'to': to,
@@ -62,7 +62,7 @@ def convParameters(from, to, format, query):
 # Limit: integer - Maximum number of results to retrieve.
 # Offset: integer - Offset of the first result, typically used together with the limit parameter.
 # Limit and ofsset arguments are not enabled in the script and will be passed as NULL as default
-def searchParameters(query, format, columns, include, compress, limit, offset):
+def searchParameters(query,format,columns,include,compress,limit,offset):
     parameters = {
     'query': query,
     'format': format,
@@ -75,7 +75,7 @@ def searchParameters(query, format, columns, include, compress, limit, offset):
     return(parameters)
 
 # API access function
-def apiAccess(url, params):
+def apiAccess(url,params):
     data = urllib.parse.urlencode(params)
     data = data.encode('utf-8')
     req = urllib.request.Request(url, data)
