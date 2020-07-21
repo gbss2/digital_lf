@@ -30,9 +30,9 @@ def script_usage():
 
 # Uniprot Base URLs
 # Convert API
-def urlBatchConv = 'https://www.uniprot.org/uploadlists/'
+urlBatchConv = "https://www.uniprot.org/uploadlists/"
 # Search API
-def urlSearch = 'https://www.uniprot.org/uniprot/?'
+urlSearch = "https://www.uniprot.org/uniprot/?"
 
 # Convert Function
 # Allows user to convert IDs within Uniprot database through REST API
