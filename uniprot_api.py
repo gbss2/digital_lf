@@ -9,13 +9,10 @@ import urllib.request
 
 def script_usage():
     print('uniprot_api.py arguments:')
-    print('\n Search database:')
-    print('--query query UniProt database by <UniProt ID or file with list of IDs>')
-    print('usage example: uniprot_api.py --query <query; eg. "Repair"> ')
-    print('\n Retrieve data:')
-    print('-r | --retrieve data for a given ID -q | --query <entries> and -f | --format <eg. "tab", "xml", "html", "xls", "fasta"> ')
-    print('usage example: uniprot_api.py --retrieve --query "P86784" --format "tab"')
-    print('Query syntax:')
+    print('\n Search database and retrieve data:')
+    print('-r | --retrieve <columns> for a given -q | --query <entries> in -f | --format <eg. "tab", "xml", "html", "xls", "fasta"> ')
+    print('Example: uniprot_api.py --retrieve --query "P86784" --format "tab"')
+    print('\nQuery syntax:')
     print('Entries containing two or more terms: human antigen | human AND antigen | human && antigen')
     print('Entries containing both terms in the exact order: "human antigen"')
     print('Entries containing one term but not the other: human NOT antigen | human !antigen')
@@ -24,9 +21,9 @@ def script_usage():
     print('Entries containing terms starting with regular expression: anti*')
     print('Citations that have an author whose name starts with Tiger: author:Tiger* ')
     print('Entries with a sequence of at least 100 amino acids: length:[100 TO *] ')
-    print('\n Convert Identifiers:')
-    print('-c | --convert <database_abbreviation> from/to -t | --targetdb <database_abbreviation> the following ID(s) -q | --query <ID or filename with IDs> and -f | --format <eg. "tab", "xml", "html", "xls", "fasta">')
-    print('usage example: uniprot_api.py --convert "ACC" --targetdb "P_ENTREZGENEID" --query "P86784" --format "tab"')
+    print('\nConvert Identifiers:')
+    print('-c | --convert <database_abbreviation> from/to -t | --targetdb <database_abbreviation> for the following -q | --query <ID or filename with IDs> in -f | --format <eg. "tab", "xml", "html", "xls", "fasta">')
+    print('Example: uniprot_api.py --convert "ACC" --targetdb "P_ENTREZGENEID" --query "P86784" --format "tab"\n\n')
 
 # Uniprot Base URLs
 # Convert API
