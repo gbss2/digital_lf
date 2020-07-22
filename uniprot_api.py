@@ -48,7 +48,6 @@ def convParameters(_from,to,format,query):
     'format': format,
     'query': query
     }
-
     return(parameters)
 
 # Search function
@@ -116,9 +115,9 @@ if __name__ == '__main__':
 #            args.limit = "NULL"
 #        if not args.include:
 #            args.include = "YES"
-        params = searchParameters(args.query, args.format, args.retrieve, args.include, args.zip, args.limit, args.offset):
+        params = searchParameters(args.query, args.format, args.retrieve, args.include, args.zip, args.limit, args.offset)
         apiAccess(urlSearch, params)
-        params = searchParameters(args.query, args.format, args.retrieve):
+        params = searchParameters(args.query, args.format, args.retrieve)
         apiAccess(urlSearch, params)
     else:
         script_usage()
