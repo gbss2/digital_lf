@@ -83,7 +83,7 @@ def apiAccess(url,params):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-            prog='Uniprot Access API handler',
+            prog='Uniprot API handler',
             description='This script was developed to convert among datasets IDs and to retrieve data from Uniprot databases using REST API.',
             epilog='Dependencies: pyhton3; pandas; urllib. Run: python3 uniprot_api.py (without any arguments to see usage examples)'
     )
@@ -92,11 +92,11 @@ if __name__ == '__main__':
     parser.add_argument('-v', '--version', action='version', version='%(prog) alpha 1.0')
     parser.add_argument('-q', '--query', help='search for words or IDs within Uniprot dabatabase (run uniprot_api.py without arguments to see query examples)')
     parser.add_argument('-f', '--format', choices=["html", "tab", "xls", "fasta", "gff", "txt", "xml", "rdf", "list", "rss"], default="tab")
-    parser.add_argument('-r', '--retrieve', help='retrieve UniProt data for database entries/columns <Columns>', default="")
+    parser.add_argument('-r', '--retrieve', help='retrieve UniProt data for database entries/columns <Columns>', default="NULL")
     parser.add_argument('-g', '--gzip', help='Return results gzipped', default="NO")
     parser.add_argument('-i', '--include', help='Include isoform sequences when the format parameter is set to fasta? Only works with RDF format', default="NO")
-    parser.add_argument('-l', '--limit', help='Maximum number of results to retrieve', type=int, default="NULL")
-    parser.add_argument('-s', '--offset', help='Offset of the first result, typically used together with the limit parameter',  type=int, default="NULL")
+    parser.add_argument('-l', '--limit', help='Maximum number of results to retrieve', default="NULL")
+    parser.add_argument('-s', '--offset', help='Offset of the first result, typically used together with the limit parameter', default="NULL")
     if len(sys.argv)==1:
         script_usage()
         parser.print_help(sys.stderr)
@@ -105,15 +105,10 @@ if __name__ == '__main__':
     if args.convert and args.to and args.query and args.format :
         params = convParameters(args.convert, args.to, args.format, args.query)
         apiAccess(urlBatchConv, params)
-    elif args.query and ar:
-#        if not args.zip:
-#            args.zip = "NO"
-#        if not args.limit:
-#            args.limit = "NULL"
-#        if not args.include:
-#            args.include = "YES"
+    elif args.query and args.retrieve and args.format:
         params = searchParameters(args.query, args.format, args.retrieve, args.include, args.zip, args.limit, args.offset)
         apiAccess(urlSearch, params)
+        print('/n/n/n/n/n/n/n/n')
         params = searchParameters(args.query, args.format, args.retrieve)
         apiAccess(urlSearch, params)
     else:
