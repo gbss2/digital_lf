@@ -106,7 +106,7 @@ if __name__ == '__main__':
         params = convParameters(args.convert, args.to, args.format, args.query)
         apiAccess(urlBatchConv, params)
     elif args.query and args.retrieve and args.format:
-        params = searchParameters(args.query, args.format, args.retrieve, args.include, args.zip, args.limit, args.offset)
+        params = searchParameters(args.query, args.format, args.retrieve, args.include, args.gzip, args.limit, args.offset)
         apiAccess(urlSearch, params)
         print('/n/n/n/n/n/n/n/n')
         params = searchParameters(args.query, args.format, args.retrieve)
