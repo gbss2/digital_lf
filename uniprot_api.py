@@ -74,9 +74,9 @@ def searchParameters(query,format,columns,include,compress,limit,offset):
 # API access function
 def apiAccess(url,params):
     data = urllib.parse.urlencode(params)
+    print(data)
     data = data.encode('utf-8')
     req = urllib.request.Request(url, data)
-    print(req)
     with urllib.request.urlopen(req) as f:
        response = f.read()
     print(response.decode('utf-8'))
