@@ -41,13 +41,14 @@ urlSearch = "https://www.uniprot.org/uniprot/?"
 # To: Database ID abbreviation
 # Format: html | tab | xls | fasta | gff | txt | xml | rdf | list | rss
 # Query: Database identifier(s)
-def convParameters(from,to,format,query):
+def convParameters(_from,to,format,query):
     parameters = {
-    'from': from,
+    'from': _from,
     'to': to,
     'format': format,
     'query': query
     }
+
     return(parameters)
 
 # Search function
